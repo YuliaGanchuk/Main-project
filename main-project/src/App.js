@@ -1,6 +1,6 @@
 import './App.css';
-import './header.js';
-import Header from './header.js';
+import './components/header.js';
+import Header from './components/header.js';
 
 
 
