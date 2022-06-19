@@ -4,7 +4,7 @@ import "./header.css";
 function Header () {
   return (
     <div className='header'>       
-        <a href=" "><img className='logo' src={ Logo } alt="" /></a>               
+        <a href="/"><img className='logo' src={ Logo } alt="" /></a>               
       <nav className='nav'>         
         <button href=" " className='button'>TV Shows</button>
         <button href=" " className='button'>Suggest me <svg className='arrow' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
