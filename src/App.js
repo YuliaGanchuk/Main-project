@@ -7,6 +7,7 @@ import Pengination from "./components/Pagination/pengination.js"
 import { useEffect, useState } from 'react';
 
 
+
 function App() {
   // Pengination ----------------------------
   // const [number, setNumber] = useState(1)
@@ -16,7 +17,7 @@ function App() {
   // ----------------------------------------
   return (
     <div>
-      {/* <Pengination count = {16} currentPage = {number} setNumber = {setNumber}/> */}
+      {/* <Pengination count = {20} defoultPage = {number} setNumber = {setNumber}/> */}
       <Routes>
         <Route path="/" element = {<Home/>}/>
         <Route path="/showDetail" element = {<ShowDetail/>}/>
