@@ -1,62 +1,42 @@
 import './home.css';
-import Slide from './Shows.png';
+
+
+
+
+function ItemCards(card) {
+    return (
+        <div className="sceleton">
+            <div className="sceleton-image">
+                <div className="sceleton-raiting" />
+            </div>
+            <p className="sceleton-text" />
+        </div>
+    )
+}
+
 
 export const Home = () => {
+    const createArray = (size) => [...new Array(size)]
+    return (
+        <div className="home">
+            {
+                createArray(8).map((el, index) => <ItemCards />)
+            }
+        </div>
+    );
+}
+
+export default Home;
+
+
+/*export const Home = () => {
     return (   
             <div className="wrapper">
                 <div className='text'>
                     <h3> <span>96</span> items</h3>
                 </div>
                 <div className='home'>               
-                    <div className='sceleton'>           
-                        <div className='sceleton-image'>
-                            <div className='sceleton-raiting' />
-                        </div>                 
-                        <p className="sceleton-text" />
-                    </div>
-                    <div className='sceleton'>           
-                        <div className='sceleton-image'>
-                            <div className='sceleton-raiting' />
-                        </div>                 
-                        <p className="sceleton-text" />
-                    </div>
-                    <div className='sceleton'>           
-                        <div className='sceleton-image'>
-                            <div className='sceleton-raiting' />
-                        </div>                 
-                        <p className="sceleton-text" />
-                    </div>
-                    <div className='sceleton'>           
-                        <div className='sceleton-image'>
-                            <div className='sceleton-raiting' />
-                        </div>                 
-                        <p className="sceleton-text" />
-                    </div>
-                    <div className='sceleton'>           
-                        <div className='sceleton-image'>
-                            <div className='sceleton-raiting' />
-                        </div>                 
-                        <p className="sceleton-text" />
-                    </div>
-                    <div className='sceleton'>           
-                        <div className='sceleton-image'>
-                            <div className='sceleton-raiting' />
-                        </div>                 
-                        <p className="sceleton-text" />
-                    </div>
-                    <div className='sceleton'>           
-                        <div className='sceleton-image'>
-                            <div className='sceleton-raiting' />
-                        </div>                 
-                        <p className="sceleton-text" />
-                    </div>
-                    <div className='sceleton'>           
-                        <div className='sceleton-image'>
-                            <div className='sceleton-raiting' />
-                        </div>                 
-                        <p className="sceleton-text" />
-                    </div>
-                </div>
+                    
                     <div className='shows'>           
                         <a href="/"><img className='image' src= { Slide } alt="slide" /></a>
                         <div className='raiting'>
@@ -69,8 +49,9 @@ export const Home = () => {
                     </div>    
                 
             </div>
+        </div>
     )
-};
+};*/
 
 /*const sceleton = document.querySelector('sceleton.hidden'),
       shows = document.querySelector('shows');
