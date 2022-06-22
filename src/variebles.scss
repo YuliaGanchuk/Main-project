@@ -1,0 +1,33 @@
+$backColorMain: #121829;
+$colorWhite: #ebeef5;
+$colorLightGray: #c3c8d4;
+$colorGray: #8e95a9;
+$colorDarkGray: #767e94;
+
+@mixin minsize($minWidthItem, $minHeightItem) {
+  width: $minWidthItem;
+  min-height: $minHeightItem;
+}
+@mixin size($widthItem, $HeightItem) {
+  width: $widthItem;
+  height: $HeightItem;
+}
+@mixin backTextColor($backCol, $textCol) {
+  background-color: $backCol;
+  color: $textCol;
+}
+@mixin fontSizeWeightHeight($fontSize, $fontWeight, $lineHeight) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+}
+@mixin displayFlex($flexDir, $justCont) {
+  display: flex;
+  flex-direction: $flexDir;
+  justify-content: $justCont;
+}
+@mixin myPosition($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
