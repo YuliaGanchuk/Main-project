@@ -9,8 +9,6 @@ import { ShowDetail } from "./pages/showDetail/ShowDetails";
 import { SuggestMe } from "./pages/suggestMe/SuggestMe";
 import Items from './components/Header/items.js';
 
-
-
 function App() {
   return (
     <div>
