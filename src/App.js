@@ -11,8 +11,6 @@ import Items from './components/Header/items.js';
 
 
 
-
-
 function App() {
   return (
     <div>

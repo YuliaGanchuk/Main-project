@@ -16,7 +16,6 @@ export default class MoviesCards {
       </div>
 
     `;
-
   }
 
   render () {

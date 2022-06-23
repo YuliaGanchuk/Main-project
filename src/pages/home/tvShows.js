@@ -33,7 +33,6 @@ async loadData() {
   }
  
   }
-
   renderComponents ()  {
     const cardsContainer = this.element.querySelector('[data-element="cardsList"]');
 
