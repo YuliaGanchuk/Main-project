@@ -3,11 +3,12 @@ import styles from "./Page404.module.scss";
 import imagePage404 from "./imagePage404.svg";
 import { useNavigate } from "react-router-dom";
 
+
 export const Page404 = () => {
   let navigate = useNavigate();
 
   const routeChange = () => {
-    navigate("../", { replace: true });
+    navigate("/");
   };
 
   return (
