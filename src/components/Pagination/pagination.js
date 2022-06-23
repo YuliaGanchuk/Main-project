@@ -1,4 +1,4 @@
-import style from "./pengination.module.scss";
+import style from "./pagination.module.scss";
 import { Pagination } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -20,9 +20,9 @@ const theme = createTheme({
   },
 });
 
-const Pengination = (props) => {
+const PaginationComponent = (props) => {
   const { count, defoultPage, setNumber } = props;
-  const CurrentPage = (event, value) => {
+  const setCurrentPage = (event, value) => {
     setNumber(value);
   };
   return (
@@ -30,7 +30,7 @@ const Pengination = (props) => {
       <Pagination
         count={count}
         page={defoultPage}
-        onChange={CurrentPage}
+        onChange={setCurrentPage}
         size="large"
         className={style.list}
         shape="rounded"
@@ -41,4 +41,4 @@ const Pengination = (props) => {
     </ThemeProvider>
   );
 };
-export default Pengination;
+export default PaginationComponent;
