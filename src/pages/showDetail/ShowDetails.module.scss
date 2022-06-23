@@ -1,0 +1,119 @@
+@import "./../../variebles.scss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  background-image: url(images/Background.svg);
+  background-size: cover;
+  background-color: $backColorMain;
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  src: local("Poppins"),
+    url("./../../fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+.wrapper {
+  @include displayFlex(row, center);
+  font-family: "Poppins";
+
+  .mainContainer {
+    width: 1200px;
+    padding-top: 40px;
+    position: relative;
+
+    .showMainImage {
+      @include size(100%, 480px);
+      border-radius: 40px;
+
+      img {
+        @include size(100%, 100%);
+      }
+    }
+    .showTitleContainer {
+      @include size(560px, 144px);
+      @include displayFlex(column, flex-start);
+      padding: 40px;
+      gap: 8px;
+      @include myPosition(absolute, 448px, 80px);
+      background-color: rgba(32, 40, 62, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+
+      .pathToThisShow {
+        @include fontSizeWeightHeight(12px, 400, 16px);
+        color: #beb7fb;
+        display: flex;
+        gap: 8px;
+
+        & > a {
+          color: #beb7fb;
+          text-decoration: none;
+        }
+      }
+
+      .showTitle {
+        @include fontSizeWeightHeight(32px, 600, 40px);
+        color: $colorWhite;
+      }
+    }
+
+    .showDescriptionContainer {
+      @include minsize(1040px, 720px);
+      margin: 152px 80px;
+      @include displayFlex(row, space-between);
+
+      .showPosterImage {
+        width: 480px;
+        height: 720px;
+        border-radius: 24px;
+
+        img {
+          @include size(100%, 100%);
+        }
+      }
+      .showDetails {
+        width: 480px;
+        @include displayFlex(column, flex-start);
+        gap: 24px;
+
+        .showTagline {
+          color: $colorWhite;
+          @include fontSizeWeightHeight(24px, 700, 32px);
+        }
+        .showSummary {
+          @include fontSizeWeightHeight(20px, 400, 32px);
+          color: $colorGray;
+        }
+        .showRating {
+          @include size(59px, 32px);
+          @include displayFlex(row, center);
+          align-items: center;
+          margin: 9px 0;
+          gap: 4px;
+          background-color: rgba(0, 0, 0, 0.65);
+          backdrop-filter: blur(8px);
+          border-radius: 8px;
+        }
+        .firstLine {
+          @include fontSizeWeightHeight(16px, 400, 24px);
+          color: $colorDarkGray;
+        }
+        .secondLine {
+          @include fontSizeWeightHeight(20px, 400, 32px);
+          color: $colorLightGray;
+        }
+        .showType,
+        .showReleaseDate,
+        .showRunTime,
+        .showGenres {
+          @include displayFlex(column, flex-start);
+          gap: 8px;
+        }
+      }
+    }
+  }
+}

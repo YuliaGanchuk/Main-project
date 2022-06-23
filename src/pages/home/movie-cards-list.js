@@ -1,6 +1,6 @@
-import Card from "./cards-block";
+import MovieCard from "./movie-card.js";
 
-export default class CardsList {
+export default class MoviesCards {
   constructor (data = []) {
     this.data = data;
     this.render();
@@ -9,8 +9,8 @@ export default class CardsList {
 
   getTemplate () {
     return `
-      <div>
-        <div class="box-cards" data-element="body">
+      <div class=cards-list-block>
+        <div class="cards-list-content" data-element="body">
 
         </div>
       </div>
@@ -21,23 +21,22 @@ export default class CardsList {
 
   render () {
     const wrapper = document.createElement('div');
-    wrapper.innerHTML = this.getTemplate();
+    wrapper.dangerouslySetInnerHTML = this.getTemplate();
     this.element = wrapper.firstElementChild;
 
   }
 
   renderCards () {
-    const movieCards = this.data.map(item => {
-      const card = new Card(item);
+    const cards = this.data.map(item => {
+      const card = new Movies(item);
       return card.element;
     });
 
     const body = this.element.querySelector('[data-element="body"]');
 
-    body.innerHTML = '';
-    body.append(...movieCards);
+    body.dangerouslySetInnerHTML = '';
+    body.append(...cards);
   }
-
   update (data = []) {
     this.data = data;
 
