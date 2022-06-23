@@ -7,7 +7,6 @@ import { SuggestMe } from "./pages/suggestMe/SuggestMe";
 function App() {
   return (
     <div>
-      {/* <PaginationComponent count = {20} defoultPage = {number} setNumber = {setNumber}/> */}
       <Routes>
         <Route path="/" element = {<Home/>}/>
         <Route path="/showDetail" element = {<ShowDetail/>}/>
