@@ -2,9 +2,13 @@ import style from "./pagination.module.scss";
 import { Pagination } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+
 const theme = createTheme({
   shape: {
     borderRadius: 12,
+  },
+  typography:{
+    fontFamily:'Poppins, Arial',
   },
   palette: {
     primary: {
@@ -20,7 +24,7 @@ const theme = createTheme({
   },
 });
 
-const PaginationComponent = (props) => {
+export const PaginationComponent = (props) => {
   const { count, defoultPage, setNumber } = props;
   const setCurrentPage = (event, value) => {
     setNumber(value);
@@ -41,4 +45,4 @@ const PaginationComponent = (props) => {
     </ThemeProvider>
   );
 };
-export default PaginationComponent;
+

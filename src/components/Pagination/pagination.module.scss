@@ -3,3 +3,8 @@
   justify-content: center;
   background-color: rgba(50, 59, 84, 1);
 }
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url(./../../fonts/Poppins-Regular.ttf) format("truetype");
+}
