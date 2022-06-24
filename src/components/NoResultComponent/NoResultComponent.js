@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { SpecialCaseComponent } from "../../components/SpecialCaseComponent/SpecialCaseComponent";
+import { ErrorComponent } from "../ErrorComponent/ErrorComponent";
 
 export const NoResultComponent = () => {
   let navigate = useNavigate();
@@ -14,7 +14,7 @@ export const NoResultComponent = () => {
   const buttonText = "Back to the main list";
 
   return (
-    <SpecialCaseComponent
+    <ErrorComponent
       mainText={mainText}
       addText={addText}
       routeChange={routeChange}
