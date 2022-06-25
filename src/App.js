@@ -3,7 +3,7 @@ import Header from './components/Header/header.js';
 import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 
-import TvCards  from './pages/home/draft-card.js';
+import TvCards  from './pages/home/skeleton.js';
 import { Home } from "./pages/home/Home";
 import { ShowDetail } from "./pages/showDetail/ShowDetails";
 import { SuggestMe } from "./pages/suggestMe/SuggestMe";

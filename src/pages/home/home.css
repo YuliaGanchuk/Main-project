@@ -34,7 +34,7 @@ h3 {
   font-size: 16px;
 }
 
-.sceleton {
+.skeleton {
   width: 282px;
   height: 480px;
   margin: 10px 12px;
@@ -54,7 +54,7 @@ h3 {
   }
 }
 
-.sceleton-image {
+.skeleton-image {
   display: flex; 
   width: 266px;
   height: 400px;
@@ -63,7 +63,7 @@ h3 {
   border-radius: 8px;
 }
 
-.sceleton-raiting {
+.skeleton-raiting {
   margin-top: 10px;
   margin-left: 8px;
   width: 60px;
@@ -72,7 +72,7 @@ h3 {
   border-radius: 8px;
 }
 
-.sceleton-text {
+.skeleton-text {
   display: flex;
   width: 150px;
   height: 20px;
@@ -82,12 +82,25 @@ h3 {
   border-radius: 8px;
 }
 
+.cards-list-block {
+  display: flex;
+  justify-content: center;
+}
+
+.cards-list-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .card-block {
   display: flex;
   flex-wrap: wrap;
+  
 }
 
-.shows {
+.show {
   margin: 10px 12px;
   display: flex;
   flex-direction: column;
