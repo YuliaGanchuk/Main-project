@@ -31,7 +31,6 @@ function App() {
         <Route path="/suggestMe" element={<SuggestMe />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
-      <TvCards />
     </div>
   );
 }
