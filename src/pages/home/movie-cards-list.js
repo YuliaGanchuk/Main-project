@@ -1,44 +1,21 @@
+import React from 'react';
 import MovieCard from "./movie-card.js";
 
-export default class MoviesCards {
-  constructor (data = []) {
-    this.data = data;
-    this.render();
-    this.renderCards();
+export default class MoviesCards extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {movies: props.movies || []};
   }
 
-  getTemplate () {
-    return `
-      <div class=cards-list-block>
-        <div class="cards-list-content" data-element="body">
-
-        </div>
-      </div>
-
-    `;
+  componentDidMount() {
   }
 
   render () {
-    const wrapper = document.createElement('div');
-    wrapper.dangerouslySetInnerHTML = this.getTemplate();
-    this.element = wrapper.firstElementChild;
-
-  }
-
-  renderCards () {
-    const cards = this.data.map(item => {
-      const card = new Movies(item);
-      return card.element;
-    });
-
-    const body = this.element.querySelector('[data-element="body"]');
-
-    body.dangerouslySetInnerHTML = '';
-    body.append(...cards);
-  }
-  update (data = []) {
-    this.data = data;
-
-    this.renderCards();
+    return (
+      <div className="cards-list-block">
+        <div class="cards-list-content" data-element="body">
+          {this.state.movies.map(movie => <MovieCard key={movie.id} card={movie} />)}
+        </div>
+      </div>)
   }
 }

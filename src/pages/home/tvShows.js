@@ -1,49 +1,45 @@
-import MoviesCard from './movie-cards-list';
-
+import React from 'react';
+import MoviesCard from './movie-cards-list.js';
+import TvCards from './draft-card.js';
 
 const BECKEND_URL = 'https://api.tvmaze.com/'
-export default class TvShows {
-  constructor () {
-    const movies = 'shows?page=1';
-    this.pageSize = 8;
-    this.movies = [];
+export default class TvShows extends React.Component {
+  constructor (props) {
+    super(props);
     this.url = new URL('shows?page=1', BECKEND_URL);
-    
-    this.components = {};
+    this.state = {movies: [], isLoaded: false}
 
-    this.render();
-    this.renderComponents();
+    this.hendleStatusChange = this.handleStatusChange.bind(this);
+  }  
+      
+  componentsDidMount() {
+    this.loadData();
   }
+    
+  hendleStatusChange(data) {
+    this.setState({
+      'movies': data,
+      isLoaded: true
+    });
+  } 
 
-async loadData() {
-
-  const response = await fetch(this.url);
-  const movies = await response.json();
-
-  return movies;
+loadData(page = 1) {
+  fetch(this.url)
+    .then(response => response.json())
+    .then(this.hendleStatusChange)
+    .catch(() => this.hendleStatusChange([]));
 }
 
-
-  getTemplate () {
-    return `
-        <div class=main-cards-block data-element="cardsList">
-
-        </div>
-    `;
+render () {
+  if (this.state.isLoaded) {
+    return (<div className="main-cards-block" data-element="cardsList">
+              <MoviesCards movies={this.state.movies} />
+            </div>);
+  } else {
+    return (<TvCards />)
   }
- 
-  }
-  renderComponents ()  {
-    const cardsContainer = this.element.querySelector('[data-element="cardsList"]');
-
-    cardsContainer.append(this.components.cardList.element);
-  }
-
-  render () {
-    const wrapper = document.createElement('div');
-    wrapper.dangerouslySetInnerHTML = this.getTemplate();
-    this.element = wrapper.firstElementChild;
-  }
+};
+}
 
 
 

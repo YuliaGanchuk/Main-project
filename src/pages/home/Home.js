@@ -1,6 +1,8 @@
 import './home.css';
+import TvShows from './tvShows.js';
 
-function ItemCards(card) {
+
+/*function ItemCards(card) {
     return (
         <div className="sceleton">
             <div className="sceleton-image">
@@ -9,16 +11,16 @@ function ItemCards(card) {
             <p className="sceleton-text" />
         </div>
     )
-}
+}*/
 
 export const Home = () => {
-    const createArray = (size) => [...new Array(size)]
-    return (
-        <div className="home">
+    //const createArray = (size) => [...new Array(size)]
+    return (<TvShows/>
+        /*<div className="home">
             {
                 createArray(8).map((el, index) => <ItemCards />)
             }
-        </div>
+        </div>*/
     );
 }
 
