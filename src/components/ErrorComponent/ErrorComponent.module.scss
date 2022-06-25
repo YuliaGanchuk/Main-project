@@ -1,0 +1,46 @@
+@import "./../../variebles.scss";
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url(./../../fonts/Poppins-Regular.ttf) format("truetype");
+}
+
+.wrapper {
+  width: 100%;
+  @include displayFlex(row, center);
+  padding-top: 120px;
+
+  .pageContainer {
+    width: 588px;
+    @include displayFlex(column, center);
+    align-items: center;
+    font-family: "Poppins";
+
+    .mainText {
+      padding-top: 40px;
+      padding-bottom: 16px;
+      @include fontSizeWeightHeight(48px, 600, 56px);
+      color: $colorWhite;
+    }
+    .addText {
+      @include fontSizeWeightHeight(16px, 400, 24px);
+      color: $colorGray;
+      text-align: center;
+      padding-bottom: 24px;
+    }
+    .buttonHome {
+      padding: 16px 32px;
+      @include backTextColor($backColorButton, #ffffff);
+      border: 2px solid $backColorButton;
+      border-radius: 12px;
+      @include fontSizeWeightHeight(16px, 400, 24px);
+
+      &:hover {
+        cursor: pointer;
+        background-color: $backColorHoverButton;
+        border: 2px solid $backColorHoverButton;
+      }
+    }
+  }
+}
