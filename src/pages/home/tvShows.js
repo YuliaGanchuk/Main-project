@@ -33,8 +33,8 @@ export default class TvShows extends React.Component {
   render() {
     if (this.state.isLoaded) {
       return (<div className="main-cards-block" data-element="cardsList">
-        <MoviesCards movies={this.state.movies}></MoviesCards>
-      </div>);
+                <MoviesCards movies={this.state.movies}></MoviesCards>
+              </div>);
       } else {
       return (<TvCards />)
     }

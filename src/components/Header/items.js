@@ -1,5 +1,5 @@
 import "./header.css";
-
+import TvShows from "../../pages/home/tvShows";
 function Items () {
   return (
     <div className='items'>       
