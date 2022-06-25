@@ -8,10 +8,11 @@
   justify-content: center;
 }
 
-.items {
+.items { 
   width: 1440px;
   display: flex;
   margin-left: 36px;
+  padding-top: 100px;
 }
 
 .cards {

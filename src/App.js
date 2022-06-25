@@ -6,7 +6,7 @@ import { Home } from "./pages/home/Home";
 import { ShowDetail } from "./pages/showDetail/ShowDetails";
 import { SuggestMe } from "./pages/suggestMe/SuggestMe";
 import { Page404 } from "./pages/Page404/Page404";
-import Items from './components/Header/items.js';
+
 
 function App() {
     //search component--------------------------------------------------------------
@@ -22,7 +22,6 @@ function App() {
   return (
     <div>
       <Header />
-      <Items />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/showDetail" element={<ShowDetail />} />

@@ -16,7 +16,7 @@ export const TvCards = () => {
   return (
       <div className="home">
           {
-              createArray(8).map((el, index) => <ItemCards />)
+              createArray(8).map((el, index) => <ItemCards key={index} />)
           }
       </div>
   );
