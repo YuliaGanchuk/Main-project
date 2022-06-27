@@ -5,7 +5,7 @@ import showPosterImage from "./images/showPosterImage.svg";
 import showRatingStar from "./images/showRatingStar.svg";
 import showRatingNumber from "./images/showRatingNumber.svg";
 
-export const ShowDetail = () => {
+export const ShowDetails = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.mainContainer}>

@@ -1,12 +1,12 @@
-import './home.css';
+import styles from './home.module.scss';
 
 function ItemCards(skeleton) {
   return (                       
-      <div className="skeleton">
-          <div className="skeleton-image">
-              <div className="skeleton-raiting" />
+      <div className={styles.skeleton}>
+          <div className={styles.skeletonImages}>
+              <div className={styles.skeletonRaiting} />
           </div>
-          <p className="skeleton-text" />
+          <p className={styles.skeletonText} />
       </div>
   )   
 }
@@ -14,7 +14,7 @@ function ItemCards(skeleton) {
 export const TvCards = () => {
   const createArray = (size) => [...new Array(size)]
   return (
-      <div className="home">
+      <div className={styles.home}>
           {
               createArray(8).map((el, index) => <ItemCards key={index} />)
           }

@@ -1,5 +1,7 @@
 import React from 'react';
-import MovieCard from "./movie-card.js";
+import MovieCard from "./movie-card";
+import './style.css';
+//import './style.css';
 export default class MoviesCards extends React.Component {
   constructor(props) {
     super(props);
@@ -10,9 +12,9 @@ export default class MoviesCards extends React.Component {
   }
 
   render() {
-    return (<div className="cards-list-block">
-      <div className="cards-list-content" data-element="body">
-        {this.state.movies.map(movie => <MovieCard key={movie.id} skeleton={movie}/>)}
+    return (<div className='cardsListBlock'>
+      <div className='cardsListContent' data-element="body">
+        {this.state.movies.map(movie => <MovieCard id={movie.id} key={movie.id} skeleton={movie}/>)}
       </div>
     </div>)
   }
