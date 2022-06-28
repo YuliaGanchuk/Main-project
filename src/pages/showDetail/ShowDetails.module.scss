@@ -1,14 +1,5 @@
 @import "./../../variebles.scss";
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-html{
-  background-image: url(images/Background.svg);
-  background-size: cover;
-  background-color: $backColorMain;
-}
+
 @font-face {
   font-family: "Poppins";
   font-style: normal;
@@ -28,13 +19,16 @@ html{
     .showMainImage {
       @include size(100%, 480px);
       border-radius: 40px;
-
+    
       img {
         @include size(100%, 100%);
+        object-fit: cover;
+        border-radius: inherit;
+        mask-image: linear-gradient(180deg, rgba(54, 44, 146, 0.8) 0%, rgba(18, 98, 151, 0.8) 100%);
       }
     }
     .showTitleContainer {
-      @include size(560px, 144px);
+      @include minsize(560px, 144px);
       @include displayFlex(column, flex-start);
       padding: 40px;
       gap: 8px;
@@ -45,13 +39,15 @@ html{
 
       .pathToThisShow {
         @include fontSizeWeightHeight(12px, 400, 16px);
-        color: #beb7fb;
         display: flex;
         gap: 8px;
 
         & > a {
           color: #beb7fb;
           text-decoration: none;
+        }
+        & > span{
+          color: #beb7fb;
         }
       }
 
@@ -73,6 +69,7 @@ html{
 
         img {
           @include size(100%, 100%);
+          border-radius: inherit;
         }
       }
       .showDetails {
@@ -94,6 +91,7 @@ html{
           align-items: center;
           margin: 9px 0;
           gap: 4px;
+          color: rgba(255, 173, 73, 1);
           background-color: rgba(0, 0, 0, 0.65);
           backdrop-filter: blur(8px);
           border-radius: 8px;
@@ -106,8 +104,20 @@ html{
           @include fontSizeWeightHeight(20px, 400, 32px);
           color: $colorLightGray;
         }
+        .showMainDetails{
+          @include displayFlex(row, space-between); 
+        }
+        .showMainDetailsCol1, .showMainDetailsCol2{
+          @include displayFlex(column, flex-start);
+          gap: 24px;
+        }
+
         .showType,
-        .showReleaseDate,
+        .showStatus,
+        .showReleaseFirstDate,
+        .showReleaseLastDate,
+        .showSeasons,
+        .showEpisodes,
         .showRunTime,
         .showGenres {
           @include displayFlex(column, flex-start);
