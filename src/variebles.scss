@@ -1,10 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 $backColorMain: #121829;
 $backColorButton: #7b6ef6;
-$backColorHoverButton: rgba(90, 74, 244, 1);
+$backColorHoverButton: #5a4af4;
 $colorWhite: #ebeef5;
 $colorLightGray: #c3c8d4;
 $colorGray: #8e95a9;
 $colorDarkGray: #767e94;
+
+html{
+  background-image: url(pages/showDetail/images/Background.svg);
+  background-size: cover;
+  background-color: $backColorMain;
+}
 
 @mixin minsize($minWidthItem, $minHeightItem) {
   width: $minWidthItem;

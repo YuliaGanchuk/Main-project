@@ -1,7 +1,6 @@
+@import "./../../variebles.scss";
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   border: none;
   outline: none;
 }
@@ -14,48 +13,42 @@
 
 .mainContainer {
   position: relative;
-  width: 344px;
-  height: 64px;
+  @include size(344px, 64px);
   margin-left: 122px;
-}
 
-.inputContainer {
-  padding-left: 56px;
-  padding-right: 56px;
-  width: 100%;
-  height: 100%;
-  font-family: "Poppins";
-  font-size: 14px;
-  line-height: 16px;
-  color: rgba(118, 126, 148, 1);
-  background-color: rgba(18, 24, 41, 1);
-  border: 1.5px solid rgba(97, 105, 127, 1);
-  border-radius: 12px;
+  .inputContainer {
+    padding-left: 56px;
+    padding-right: 56px;
+    @include size(100%, 100%);
+    @include fontSizeWeightHeight(14px, 400, 16px);
+    font-family: "Poppins";
+    color: $colorDarkGray;
+    background-color: #121829;
+    border: 1.5px solid #61697f;
+    border-radius: 12px;
 
-  &:focus {
-    border: 1.5px solid rgb(90, 74, 244);
+    &:focus {
+      border: 1.5px solid $backColorHoverButton;
+    }
+    &::placeholder {
+      color: #475069;
+    }
   }
-  &::placeholder {
-    color: rgba(71, 80, 105, 1);
-  }
-}
 
-.searchIcon,
-.clearButton,
-.icon {
-  box-sizing: border-box;
-  width: 19px;
-  height: 19px;
-  border: none;
-  background-color: inherit;
-}
-.searchIcon {
-  position: absolute;
-  top: 22.5px;
-  left: 18px;
-}
-.clearButton {
-  position: absolute;
-  top: 22.5px;
-  right: 18px;
+  .searchIcon,
+  .clearButton,
+  .icon {
+    box-sizing: border-box;
+    @include size(19px, 19px);
+    border: none;
+    background-color: inherit;
+  }
+  .searchIcon {
+    @include myPosition(absolute, 22.5px, 18px);
+  }
+  .clearButton {
+    position: absolute;
+    top: 22.5px;
+    right: 18px;
+  }
 }
