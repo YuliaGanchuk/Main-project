@@ -1,9 +1,6 @@
 import React from 'react';
 import TvShows from './sugTvShows';
 
-
-
-
 export const SuggestMe = () => {
     return (
         <>
@@ -15,8 +12,7 @@ export const SuggestMe = () => {
             <a href="/">
               <button className='btn'>Back to the main list</button>
             </a>  
-            </div>
-            
+            </div> 
         </>
     )
 };
