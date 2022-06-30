@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ShowDetails.module.scss";
 import showRatingStar from "./images/showRatingStar.svg";
+import { urls } from "../../consts/urls";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
@@ -8,7 +9,6 @@ export const ShowDetails = () => {
   const location = useLocation();
   const { id } = location.state;
   const now = "now";
-  const statePartUrl = 'https://api.tvmaze.com/shows';
   const [data, setData] = useState({});
   const [dataSeasons, setDataSeasons] = useState([]);
   const [dataEpisodes, setDataEpisodes] = useState([]);
@@ -18,12 +18,12 @@ export const ShowDetails = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`${statePartUrl}/${id}`);
+        const response = await axios.get(`${urls.tvMazeApi}/${id}`);
         const responseSeasons = await axios.get(
-          `${statePartUrl}/${id}/seasons`
+          `${urls.tvMazeApi}/${id}/seasons`
         );
         const responseEpisodes = await axios.get(
-          `${statePartUrl}/${id}/episodes`
+          `${urls.tvMazeApi}/${id}/episodes`
         );
         setData(response.data);
         setDataSeasons(responseSeasons.data);
@@ -37,7 +37,7 @@ export const ShowDetails = () => {
       }
     };
     getData();
-  }, []);
+  }, [id]);
 
   return (
     <div className={styles.wrapper}>
