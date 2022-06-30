@@ -4,8 +4,6 @@ import TvCards from "./skeleton";
 import Items from "./items"
 import styles from './sug-home.module.scss';
 
-
-
 const BECKEND_URL = "https://api.tvmaze.com/";
 export default class TvShows extends React.Component {
   constructor(props) {
