@@ -1,22 +1,16 @@
-import React, { useState, useEffect} from 'react';
+import React from "react";
 import MoviesCards from "./movie-cards-list";
 import TvCards from "./skeleton";
-import Items from "./items"
-import styles from './home.module.scss';
+import Items from "./items";
+import styles from "./home.module.scss";
+import { NoResultComponent } from "./../../components/NoResultComponent/NoResultComponent";
 
 const BECKEND_URL = "https://api.tvmaze.com/";
 export default class TvShows extends React.Component {
   constructor(props) {
     super(props);
-    
     this.url = new URL("shows?page=1", BECKEND_URL);
-    this.searchText = new URL("gerls", BECKEND_URL);
-    console.log(this.searchText);
-
-    // this.searchText? (this.url = new URL("shows?page=1", BECKEND_URL)) : (this.url = new URL(`search/shows?q=${this.searchText}`, BECKEND_URL));
-
-  this.state = { movies: [], isLoaded: false, count: 0 /*searchText: world*/};
-
+    this.state = { movies: [], isLoaded: false, count: 0 };
     this.handleStatusChange = this.handleStatusChange.bind(this);
   }
 
@@ -25,12 +19,10 @@ export default class TvShows extends React.Component {
   }
 
   handleStatusChange(data) {
-    const movieNumber = data.slice(0, 8);
     this.setState({
-      movies: movieNumber,
+      movies: data,
       isLoaded: true,
-      count: movieNumber.length
-      //searchText: world
+      count: data.length,
     });
   }
 
@@ -42,13 +34,30 @@ export default class TvShows extends React.Component {
   }
 
   render() {
+    const texted = this.props.text;
+    const filterData = this.state.movies.filter((show) =>
+      texted !== ""
+        ? show.name.toLowerCase().includes(texted.toLowerCase())
+        : show
+    );
+    const numpage = Math.ceil(filterData.length / 8);
+    this.props.setPageNum(numpage);
+    const slicePageData = filterData.slice(
+      (this.props.numberSelectedPage - 1) * 8,
+      this.props.numberSelectedPage * 8
+    );
+    filterData.length < 9 && this.props.setPageNum(0);
     if (this.state.isLoaded) {
       return (
         <>
-          <Items count={this.state.count} />
-          <div className={styles.mainCardsBlock} data-element="cardsList">
-            <MoviesCards movies={this.state.movies}></MoviesCards>
-          </div>
+          {filterData.length !== 0 && <Items count={filterData.length} />}
+          {filterData.length > 0 ? (
+            <div className={styles.mainCardsBlock} data-element="cardsList">
+              <MoviesCards movies={slicePageData}></MoviesCards>
+            </div>
+          ) : (
+            <NoResultComponent text={texted} setText={this.props.setText} />
+          )}
         </>
       );
     } else {
