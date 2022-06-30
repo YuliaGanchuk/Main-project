@@ -27,7 +27,7 @@ export default class TvShows extends React.Component {
   }
 
   handleStatusChange(data) {
-    const movieNumber = data.slice(0, 8);
+    const movieNumber = data.slice(0, 96);
     this.setState({
       movies: movieNumber,
       isLoaded: true,
