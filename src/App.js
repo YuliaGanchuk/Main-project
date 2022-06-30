@@ -4,15 +4,26 @@ import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 import { Home } from "./pages/home/Home";
 import { ShowDetails } from "./pages/showDetail/ShowDetails";
-import { SuggestMe } from "./pages/suggestMe/SuggestMe";
+import { SuggestMe }  from "./pages/suggestMe/SuggestMe";
 import { Page404 } from "./pages/Page404/Page404";
 
 
-function App() {
 
+function App() {
+    //search component--------------------------------------------------------------
+  // const [text, setText]= useState("");
+
+  // const onchangeFunc = (event) => {
+  //   setText(event.target.value);
+  // }
+  // const onclickFunc = (event) => {
+  //   setText("");
+  // }
+  //-----------------------------------------------------------
   return (
     <div>
       <Header />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/show-details/:id" element={<ShowDetails />} />

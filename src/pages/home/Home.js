@@ -20,7 +20,8 @@ const onclickFunc = (event) => {
 
     return (
     <>
-
+    <p className='nameText'>MaileHereko</p>
+    <h1 className='pText'>TV Shows</h1>
     <Input text={text} onchangeFunc = {onchangeFunc} onclickFunc = {onclickFunc}></Input>
     <TvShows searchText= {text}/>
     <PaginationComponent count={12} defoultPage={number} setNumber = {setNumber} />

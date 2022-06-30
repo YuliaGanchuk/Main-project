@@ -43,7 +43,7 @@
     .showMainImage {
       @include size(100%, 480px);
       border-radius: 40px;
-
+    
       img {
         @include size(100%, 100%);
         object-fit: cover;
