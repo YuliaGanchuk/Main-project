@@ -7,13 +7,10 @@ import axios from "axios";
 export const ShowDetails = () => {
   const location = useLocation();
   const { id } = location.state;
-  console.log(id);
   const now = "now";
-
   const [data, setData] = useState({});
   const [dataSeasons, setDataSeasons] = useState([]);
   const [dataEpisodes, setDataEpisodes] = useState([]);
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -43,11 +40,15 @@ export const ShowDetails = () => {
 
   return (
     <div className={styles.wrapper}>
-      {loading && <div>A moment please...</div>}
+      {loading && (
+        <div className={styles.spinnerContainer}>
+          <div className={styles.loadingSpinner}></div>
+        </div>
+      )}
       {error && (
         <div>{`There is a problem fetching the post data - ${error}`}</div>
       )}
-      {data && (
+      {!loading && data && (
         <div className={styles.mainContainer}>
           <div className={styles.showMainImage}>
             <img
