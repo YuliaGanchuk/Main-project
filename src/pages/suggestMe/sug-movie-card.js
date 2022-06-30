@@ -9,7 +9,6 @@ export class MovieCard extends React.Component {
     }
   
     render () {
-
       return (
         <Link to={`/show-details/${this.props.id}`} state={{id: this.props.id}}>
             <div className='mainCardBlock'>
@@ -30,7 +29,6 @@ export class MovieCard extends React.Component {
             </svg>Suggest this</div>
         </div>
         </div></Link>);
-      
     }
 }  
    
