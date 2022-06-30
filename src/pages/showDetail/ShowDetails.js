@@ -8,6 +8,7 @@ export const ShowDetails = () => {
   const location = useLocation();
   const { id } = location.state;
   const now = "now";
+  const statePartUrl = 'https://api.tvmaze.com/shows';
   const [data, setData] = useState({});
   const [dataSeasons, setDataSeasons] = useState([]);
   const [dataEpisodes, setDataEpisodes] = useState([]);
@@ -17,12 +18,12 @@ export const ShowDetails = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`https://api.tvmaze.com/shows/${id}`);
+        const response = await axios.get(`${statePartUrl}/${id}`);
         const responseSeasons = await axios.get(
-          `https://api.tvmaze.com/shows/${id}/seasons`
+          `${statePartUrl}/${id}/seasons`
         );
         const responseEpisodes = await axios.get(
-          `https://api.tvmaze.com/shows/${id}/episodes`
+          `${statePartUrl}/${id}/episodes`
         );
         setData(response.data);
         setDataSeasons(responseSeasons.data);
