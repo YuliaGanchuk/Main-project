@@ -16,6 +16,8 @@ export const Home = () => {
   };
   return (
     <>
+      <p className='nameText'>MaileHereko</p>
+      <h1 className='pText'>TV Shows</h1>
       <Input
         text={text}
         onchangeFunc={onchangeFunc}
@@ -36,3 +38,4 @@ export const Home = () => {
     </>
   );
 };
+

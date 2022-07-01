@@ -8,21 +8,6 @@
   justify-content: center;
 }
 
-.nameText {
-  margin-top: 64px;
-  margin-left: 120px;
-
-  font-size: 16px;
-  color: #BEB7FB;
-}
-
-h1.pText {
-  margin: 0 0 16px 120px;
-
-  font-size: 64px;
-  color: #EBEEF5;
-}
-
 .num { 
   width: 1440px;
   display: flex;
@@ -49,8 +34,6 @@ h3 {
   color: rgba(118, 126, 148, 1);
   font-size: 16px;
 }
-
-
 
 @keyframes fade {
   from {
@@ -84,11 +67,20 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 282px;
-  height: 480px;
+  height: 520px;
   background:  rgba(18, 24, 41, 1);
   border-radius: 12px;
-  padding: 8px;
+  padding-top: 8px;
   overflow: hidden;
+}
+
+.like {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-left: 18px;
+  margin-right: 10px;
+
 }
 
 .star {
@@ -105,7 +97,6 @@ h3 {
 a {
   display: flex;
   justify-content: center;
-  text-decoration: none;
 }
 
 .photo {
@@ -116,11 +107,7 @@ a {
   margin-left: 8px;
 }
 
-.photo:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
 
-}
 
 .raiting {
   width: 60px;
@@ -136,7 +123,7 @@ a {
 }
 
 p {
-  margin: 0;
+  margin-top: 10px;
 }
 
 .textName {
