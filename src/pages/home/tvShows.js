@@ -34,29 +34,30 @@ export default class TvShows extends React.Component {
   }
 
   render() {
-    const texted = this.props.text;
+    const { text, setText, pageNum, setPageNum, numberSelectedPage } =
+      this.props;
     const filterData = this.state.movies.filter((show) =>
-      texted !== ""
-        ? show.name.toLowerCase().includes(texted.toLowerCase())
-        : show
+      text !== "" ? show.name.toLowerCase().includes(text.toLowerCase()) : show
     );
     const numpage = Math.ceil(filterData.length / 8);
-    this.props.setPageNum(numpage);
+    setPageNum(numpage);
     const slicePageData = filterData.slice(
-      (this.props.numberSelectedPage - 1) * 8,
-      this.props.numberSelectedPage * 8
+      (numberSelectedPage - 1) * 8,
+      numberSelectedPage * 8
     );
-    filterData.length < 9 && this.props.setPageNum(0);
+    filterData.length < 9 && setPageNum(0);
     if (this.state.isLoaded) {
       return (
         <>
-          {filterData.length !== 0 && <Items count={filterData.length} />}
           {filterData.length > 0 ? (
-            <div className={styles.mainCardsBlock} data-element="cardsList">
-              <MoviesCards movies={slicePageData}></MoviesCards>
-            </div>
+            <>
+              <Items count={filterData.length} />{" "}
+              <div className={styles.mainCardsBlock} data-element="cardsList">
+                <MoviesCards movies={slicePageData}></MoviesCards>
+              </div>
+            </>
           ) : (
-            <NoResultComponent text={texted} setText={this.props.setText} />
+            <NoResultComponent text={text} setText={setText} />
           )}
         </>
       );
