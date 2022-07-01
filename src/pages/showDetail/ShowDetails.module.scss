@@ -11,6 +11,30 @@
   @include displayFlex(row, center);
   font-family: "Poppins";
 
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .loadingSpinner {
+    width: 100px;
+    height: 100px;
+    border: 10px solid $colorWhite;
+    border-top: 10px solid $colorDarkGray;
+    border-radius: 50%;
+    animation: spinner 1.5s linear infinite;
+  }
+
+  .spinnerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+  }
+
   .mainContainer {
     width: 1200px;
     padding-top: 40px;
@@ -24,7 +48,11 @@
         @include size(100%, 100%);
         object-fit: cover;
         border-radius: inherit;
-        mask-image: linear-gradient(180deg, rgba(54, 44, 146, 0.8) 0%, rgba(18, 98, 151, 0.8) 100%);
+        mask-image: linear-gradient(
+          180deg,
+          rgba(54, 44, 146, 0.8) 0%,
+          rgba(18, 98, 151, 0.8) 100%
+        );
       }
     }
     .showTitleContainer {
@@ -46,7 +74,7 @@
           color: #beb7fb;
           text-decoration: none;
         }
-        & > span{
+        & > span {
           color: #beb7fb;
         }
       }
@@ -104,10 +132,11 @@
           @include fontSizeWeightHeight(20px, 400, 32px);
           color: $colorLightGray;
         }
-        .showMainDetails{
-          @include displayFlex(row, space-between); 
+        .showMainDetails {
+          @include displayFlex(row, space-between);
         }
-        .showMainDetailsCol1, .showMainDetailsCol2{
+        .showMainDetailsCol1,
+        .showMainDetailsCol2 {
           @include displayFlex(column, flex-start);
           gap: 24px;
         }

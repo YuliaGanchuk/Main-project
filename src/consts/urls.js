@@ -1,0 +1,1 @@
+export const urls = {tvMazeApi:'https://api.tvmaze.com/shows'}

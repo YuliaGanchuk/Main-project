@@ -1,31 +1,29 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ShowDetails.module.scss";
 import showRatingStar from "./images/showRatingStar.svg";
+import { urls } from "../../consts/urls";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 export const ShowDetails = () => {
   const location = useLocation();
   const { id } = location.state;
-  console.log(id);
   const now = "now";
-
   const [data, setData] = useState({});
   const [dataSeasons, setDataSeasons] = useState([]);
   const [dataEpisodes, setDataEpisodes] = useState([]);
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get(`https://api.tvmaze.com/shows/${id}`);
+        const response = await axios.get(`${urls.tvMazeApi}/${id}`);
         const responseSeasons = await axios.get(
-          `https://api.tvmaze.com/shows/${id}/seasons`
+          `${urls.tvMazeApi}/${id}/seasons`
         );
         const responseEpisodes = await axios.get(
-          `https://api.tvmaze.com/shows/${id}/episodes`
+          `${urls.tvMazeApi}/${id}/episodes`
         );
         setData(response.data);
         setDataSeasons(responseSeasons.data);
@@ -39,15 +37,19 @@ export const ShowDetails = () => {
       }
     };
     getData();
-  }, []);
+  }, [id]);
 
   return (
     <div className={styles.wrapper}>
-      {loading && <div>A moment please...</div>}
+      {loading && (
+        <div className={styles.spinnerContainer}>
+          <div className={styles.loadingSpinner}></div>
+        </div>
+      )}
       {error && (
         <div>{`There is a problem fetching the post data - ${error}`}</div>
       )}
-      {data && (
+      {!loading && data && (
         <div className={styles.mainContainer}>
           <div className={styles.showMainImage}>
             <img
