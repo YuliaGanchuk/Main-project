@@ -51,7 +51,7 @@ export default class TvShows extends React.Component {
         <>
           {filterData.length > 0 ? (
             <>
-              <Items count={filterData.length} />{" "}
+              <Items count={filterData.length} />
               <div className={styles.mainCardsBlock} data-element="cardsList">
                 <MoviesCards movies={slicePageData}></MoviesCards>
               </div>
