@@ -80,7 +80,7 @@ export const ShowDetails = () => {
               ></div>
               <div className={styles.showRating}>
                 <img src={showRatingStar} alt="icon of star"></img>
-                {data.rating !== undefined && data.rating.average}
+                {data.rating !== undefined && (data.rating.average || 0)}
               </div>
 
               <div className={styles.showMainDetails}>
