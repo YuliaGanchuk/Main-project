@@ -27,13 +27,6 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-h3 {
-  margin-left: 88px;
-  width: 74px;
-  height: 24px;
-  color: rgba(118, 126, 148, 1);
-  font-size: 16px;
-}
 
 @keyframes fade {
   from {
@@ -99,7 +92,7 @@ h3 {
 
 }
 
-a {
+.sug-a {
   display: flex;
   justify-content: center;
 }
@@ -111,8 +104,6 @@ a {
   border-radius: 8px;
   margin-left: 8px;
 }
-
-
 
 .raiting {
   width: 60px;
@@ -130,6 +121,8 @@ a {
 .sug-p {
   margin-top: 10px;
   margin-left: 18px;
+  font-size: 16px;
+  color: #BEB7FB;
 }
 
 .sug-textName {
