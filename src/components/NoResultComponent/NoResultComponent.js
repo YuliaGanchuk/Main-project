@@ -1,11 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { ErrorComponent } from "../ErrorComponent/ErrorComponent";
 
-export const NoResultComponent = () => {
-  let navigate = useNavigate();
+export const NoResultComponent = ({ text, setText }) => {
   const routeChange = () => {
-    navigate("/");
+    setText("");
   };
 
   const mainText = "No results.";
