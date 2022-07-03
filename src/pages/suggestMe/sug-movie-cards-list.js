@@ -6,7 +6,7 @@ export default class MoviesCards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: props.movies.slice(0, 8),
+      movies: props.movies,
       allMovies: props.movies || [],
       lastIndex: 8,
     };
@@ -22,7 +22,7 @@ export default class MoviesCards extends React.Component {
       movies: this.state.allMovies.slice(newIndex === 8 ? 0: this.state.lastIndex, newIndex),
       lastIndex: newIndex,
     });
-  }, 3000)
+  }, 30000)
   }
 
   componentWillUnmount() {
