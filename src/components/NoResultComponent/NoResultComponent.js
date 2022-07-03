@@ -4,6 +4,7 @@ import { ErrorComponent } from "../ErrorComponent/ErrorComponent";
 export const NoResultComponent = ({ text, setText }) => {
   const routeChange = () => {
     setText("");
+    window.scrollTo(0,0);
   };
 
   const mainText = "No results.";
