@@ -13,11 +13,11 @@ export class MovieCard extends React.Component {
       <Link to={`/show-details/${this.props.id}`} state={{ id: this.props.id }}>
         <div className="mainCardBlock">
           <div className="show">
-            <img
+              <div className="containerImageShow"><img
               className="photo"
               src={this.state.skeleton.image.medium}
               alt="slide"
-            />
+            /></div>
             <div className="raiting">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

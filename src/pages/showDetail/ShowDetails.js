@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import styles from "./ShowDetails.module.scss";
 import showRatingStar from "./images/showRatingStar.svg";
 import { urls } from "../../consts/urls";
-import { Link, useLocation } from "react-router-dom";
+import { Link,  useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ErrorComponent } from "../../components/ErrorComponent/ErrorComponent";
 
 export const ShowDetails = () => {
   const location = useLocation();
@@ -14,6 +15,8 @@ export const ShowDetails = () => {
   const [dataEpisodes, setDataEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = async () => {
@@ -46,8 +49,8 @@ export const ShowDetails = () => {
           <div className={styles.loadingSpinner}></div>
         </div>
       )}
-      {error && (
-        <div>{`There is a problem fetching the post data - ${error}`}</div>
+      {error && (<ErrorComponent  mainText={`There is a problem fetching the post data - ${error}`} routeChange ={ () => navigate("/")}
+      buttonText={"Go home"}/>
       )}
       {!loading && data && (
         <div className={styles.mainContainer}>

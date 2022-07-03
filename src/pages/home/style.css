@@ -85,7 +85,8 @@ h3 {
   flex-direction: column;
   width: 282px;
   height: 480px;
-  background:  rgba(18, 24, 41, 1);
+  background-color:  rgba(32, 40, 62, 0.8);
+  backdrop-filter: blur(80px);
   border-radius: 12px;
   padding-top: 8px;
   overflow: hidden;
@@ -106,16 +107,23 @@ a {
   display: flex;
   justify-content: center;
 }
-
-.photo {
+.containerImageShow{
   display: flex;
   width: 266px;
   height: 400px;
   border-radius: 8px;
+  overflow: hidden;;
   margin-left: 8px;
 }
+.photo {
+ width: inherit;
+ height: inherit;
+ transform: scale(1);
+ transition: 0.3s;
+ 
+}
 
-.photo:hover {
+.show:hover .photo{
   transform: scale(1.05);
   transition: 0.3s;
 

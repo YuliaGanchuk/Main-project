@@ -10,16 +10,7 @@ import { Page404 } from "./pages/Page404/Page404";
 
 
 function App() {
-    //search component--------------------------------------------------------------
-  // const [text, setText]= useState("");
 
-  // const onchangeFunc = (event) => {
-  //   setText(event.target.value);
-  // }
-  // const onclickFunc = (event) => {
-  //   setText("");
-  // }
-  //-----------------------------------------------------------
   return (
     <div>
       <Header />
