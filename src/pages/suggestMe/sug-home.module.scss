@@ -1,4 +1,4 @@
-//@import "../../variebles.scss";
+
 .wrapper {
   width: 1440px;
   display: flex;
@@ -26,13 +26,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-h3 {
-  margin-left: 88px;
-  width: 74px;
-  height: 24px;
-  color: rgba(118, 126, 148, 1);
-  font-size: 16px;
 }
 
 .skeleton {
@@ -83,12 +76,6 @@ h3 {
   border-radius: 8px;
 }
 
-/*.cardsListBlock  {
-  @include displayFlex(row, center);
-  flex-wrap: wrap;
-}*/
-
-
  .cardsListContent { 
   display: flex;
   flex-direction: row;
@@ -97,12 +84,10 @@ h3 {
 
 }
 
-
 .mainCardBlock {
   display: flex;
   flex-wrap: wrap;
-  }
-
+}
 
 .show {
   margin: 10px 12px;
@@ -114,22 +99,15 @@ h3 {
   border-radius: 12px;
   padding-top: 8px;
   overflow: hidden;
-  }
-
+}
 
  .star {
   color: #FFAD49;
   margin-right: 5px;
-  }
-
+}
 
 span  {
   color: #FFAD49;
-  }
-
-a {
-  display: flex;
-  justify-content: center;
 }
 
 .photo {
@@ -153,15 +131,16 @@ a {
 
 }
 
-p {
-  margin: 0;
-}
-
 .textName {
   position: relative;
   color: #EBEEF5;
   margin-left: 16px;
   margin-top: 24px;
-
 }
 
+.sug-p {
+  margin-left: 120px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  color: #BEB7FB;
+}
