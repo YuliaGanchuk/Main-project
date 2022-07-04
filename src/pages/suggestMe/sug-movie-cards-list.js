@@ -6,7 +6,7 @@ export default class MoviesCards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: props.movies,
+      movies: props.movies.slice(0, 8),
       allMovies: props.movies || [],
       lastIndex: 8,
     };
