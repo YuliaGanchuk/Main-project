@@ -19,14 +19,12 @@
 .nameText {
   margin-top: 64px;
   margin-left: 120px;
-
   font-size: 16px;
   color: #BEB7FB;
 }
 
 h1.pText {
   margin: 0 0 16px 120px;
-
   font-size: 64px;
   color: #EBEEF5;
 }
@@ -142,7 +140,7 @@ a {
 
 .textName {
   position: relative;
-  color: #BEB7FB;
+  color: #EBEEF5;
   margin-left: 16px;
   margin-top: 14px;
   font-weight: 600;

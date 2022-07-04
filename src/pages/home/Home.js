@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TvShows from "./tvShows.js";
 import { Input } from "./../../components/Input/Input";
 import { PaginationComponent } from "./../../components/Pagination/pagination";
@@ -11,9 +11,12 @@ export const Home = () => {
     setText(event.target.value);
     setNumber(1);
   };
-  const onclickFunc = (event) => {
+  const onclickFunc = () => {
     setText("");
   };
+  useEffect(()=>{
+    window.scrollTo({top: 0,behavior: "smooth"})
+  },[number])
   return (
     <>
       <div className="contHome">

@@ -40,6 +40,7 @@ export const ShowDetails = () => {
       }
     };
     getData();
+    window.scrollTo({top:0});
   }, [id]);
 
   return (

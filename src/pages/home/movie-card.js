@@ -7,7 +7,7 @@ export class MovieCard extends React.Component {
     super(props);
     this.state = { skeleton: props.skeleton };
   }
-
+  
   render() {
     return (
       <div className="mainCardBlock">

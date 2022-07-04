@@ -20,10 +20,18 @@
   margin-top: 14px;
   color: #7B6EF6;
 }
-
+.like:hover{
+  color:#5a4af4;
+  stroke: #5a4af4;
+}
+.like:hover .sug-svg{
+  stroke:#5a4af4;
+}
 .sug-svg {
   margin-right: 10px;
+  stroke: #7B6EF6;
 }
+
 
 .sug-a {
   display: flex;
