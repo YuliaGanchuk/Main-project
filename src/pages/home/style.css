@@ -103,6 +103,7 @@ h1.pText {
 
 a {
   display: flex;
+  flex-direction: column; 
 }
 
 .containerImageShow{
