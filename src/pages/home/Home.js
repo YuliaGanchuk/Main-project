@@ -16,18 +16,16 @@ export const Home = () => {
   };
   return (
     <>
-    <div className="contHome">
-      <div className="homeTextContainer">
-        <p className="nameText">MaileHereko</p>
-        <h1 className="pText">TV Shows</h1>
-
-
-      <Input
-        text={text}
-        onchangeFunc={onchangeFunc}
-        onclickFunc={onclickFunc}
-      ></Input>
-            </div>
+      <div className="contHome">
+        <div className="homeTextContainer">
+          <p className="nameText">MaileHereko</p>
+          <h1 className="pText">TV Shows</h1>
+          <Input
+            text={text}
+            onchangeFunc={onchangeFunc}
+            onclickFunc={onclickFunc}
+          ></Input>
+        </div>
       </div>
       <TvShows
         text={text}
@@ -41,6 +39,6 @@ export const Home = () => {
         defoultPage={number}
         setNumber={setNumber}
       />
-      </>
+    </>
   );
 };
