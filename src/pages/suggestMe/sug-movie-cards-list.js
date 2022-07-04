@@ -13,17 +13,17 @@ export default class MoviesCards extends React.Component {
     this.interval = null;
   }
 
-  // componentDidMount() {
-  //   this.interval = setInterval(() => {
-  //     const size = this.state.allMovies.length - 1;
-  //     let newIndex = this.state.lastIndex + 8;
-  //     newIndex = size - newIndex >= 0 ? newIndex: 8;
-  //   this.setState({
-  //     movies: this.state.allMovies.slice(newIndex === 8 ? 0: this.state.lastIndex, newIndex),
-  //     lastIndex: newIndex,
-  //   });
-  // }, 30000)
-  // }
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      const size = this.state.allMovies.length - 1;
+      let newIndex = this.state.lastIndex + 8;
+      newIndex = size - newIndex >= 0 ? newIndex: 8;
+    this.setState({
+      movies: this.state.allMovies.slice(newIndex === 8 ? 0: this.state.lastIndex, newIndex),
+      lastIndex: newIndex,
+    });
+  }, 30000)
+  }
 
   componentWillUnmount() {
     this.interval && clearInterval(this.interval)
