@@ -6,11 +6,11 @@ function Header() {
   return (
     <div className="wrapperCont">
       <div className="header">
-        <a href="https://yuliaganchuk.github.io/Main-project/#/">
+        <a href="/">
           <img className="logo" src={Logo} alt="logo" />
         </a>
         <nav className="nav">
-          <Link to={"https://yuliaganchuk.github.io/Main-project/#/"} className="head-button">
+          <Link to={"/"} className="head-button">
             TV Shows
           </Link>
           <Link to={"/suggestMe"} className="head-button">

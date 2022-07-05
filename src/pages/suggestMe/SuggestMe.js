@@ -9,7 +9,7 @@ export const SuggestMe = () => {
             <TvShows />
             <h2>Didn’t find the one you looking for?</h2>
             <div className='sug-btn'>
-            <a className='sug-a' href="https://yuliaganchuk.github.io/Main-project/#/">
+            <a className='sug-a' href="/">
               <button className='btn'>Back to the main list</button>
             </a>  
             </div> 

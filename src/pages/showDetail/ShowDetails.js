@@ -63,9 +63,9 @@ export const ShowDetails = () => {
           </div>
           <div className={styles.showTitleContainer}>
             <div className={styles.pathToThisShow}>
-              <Link to={"https://yuliaganchuk.github.io/Main-project/#/"}>MaileHerenko</Link>
+              <Link to={"/"}>MaileHerenko</Link>
               <span>/</span>
-              <Link to={"https://yuliaganchuk.github.io/Main-project/#/"}>TV Shows</Link>
+              <Link to={"/"}>TV Shows</Link>
             </div>
             <div className={styles.showTitle}>{data.name}</div>
           </div>
