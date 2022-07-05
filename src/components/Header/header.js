@@ -6,9 +6,9 @@ function Header() {
   return (
     <div className="wrapperCont">
       <div className="header">
-        <a href="/">
+        <Link to = {"/"}>
           <img className="logo" src={Logo} alt="logo" />
-        </a>
+        </Link>
         <nav className="nav">
           <Link to={"/"} className="head-button">
             TV Shows
