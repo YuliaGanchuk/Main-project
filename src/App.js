@@ -16,7 +16,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="https://yuliaganchuk.github.io/Main-project/#/" element={<Home />} />
         <Route path="/show-details/:id" element={<ShowDetails />} />
         <Route path="/suggestMe" element={<SuggestMe />} />
         <Route path="*" element={<Page404 />} />
